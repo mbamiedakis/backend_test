@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BACKEND CHALLENGE</title>
+</head>
+<body>
+HELLO WORLD
+  <ul class="fullname">
+  <% for(var i=0; i<fullname.length; i++) {%>
+    <li class="name">
+      <span><%= fullname[i].name %></span>
+      <span><%= fullname[i].quote %></span>
+    </li>
+  <% } %>
+  </ul>
+
+  <form action="/fullname" method="POST">
+    <input type="text" placeholder="name" name="name">
+    <input type="text" placeholder="quote" name="quote">
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BACKEND CHALLENGE</title>
+</head>
+<body>
+HELLO WORLD
+  <ul class="fullname">
+  <% for(var i=0; i<fullname.length; i++) {%>
+    <li class="name">
+      <span><%= fullname[i].name %></span>
+      <span><%= fullname[i].surname %></span>
+    </li>
+  <% } %>
+  </ul>
+
+  <form action="/fullname" method="POST">
+    <input type="text" placeholder="name" name="name">
+    <input type="text" placeholder="surname" name="surname">
+    <button type="submit">Submit</button>
+  </form>
+  <div>
+  <h2>Replace last surname</h2>
+  <button id="update"> surname! </button>
+  </div>
+  <div>
+  <h2>Delete 1</h2>
+  <button id="delete"> 1! </button>
+  </div>
+</body>
+<script src="main.js"></script>
+
+</html>
