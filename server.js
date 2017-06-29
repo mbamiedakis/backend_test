@@ -37,10 +37,13 @@ app.post('/fullname', (req, res) => {
   db.collection('fullname').save(req.body, (err, result) => {
     if (err) return console.log(err)
 
-    console.log('saved to database')
+    console.log('saved to database.')
     res.redirect('/')
   })
 })
+
+
+
 
 // Delete request handler
 app.delete('/fullname', (req, res) => {
@@ -66,5 +69,33 @@ app.put('/fullname', (req, res) => {
   }, (err, result) => {
     if (err) return res.send(err)
     res.send(result)
+  })
+})
+
+//for postman
+app.post('/', (req, res) => {
+  db.collection('fullname').find().toArray((err,result) =>{
+      if (err) return console.log(err)
+       res.render('index.ejs',{fullname:result})
+
+
+  })
+  })
+
+app.delete('/', (req, res) => {
+  db.collection('fullname').find().toArray((err,result) =>{
+      if (err) return console.log(err)
+       res.render('index.ejs',{fullname:result})
+
+
+  })
+})
+
+app.put('/', (req, res) => {
+  db.collection('fullname').find().toArray((err,result) =>{
+      if (err) return console.log(err)
+       res.render('index.ejs',{fullname:result})
+
+
   })
 })
